@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add -D @types/type-orm
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add -D @types/bcriptjs
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\MSI-PC\bin;C:\Program Files\Python39\Scripts;C:\Program Files\Python39;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64_win\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\OpenJDK\openjdk-8u262-b10\bin;C:\Program Files\Java\jdk-12.0.1\bin;C:\php;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\PostgreSQL\12\bin;C:\Users\MSI-PC\Downloads\mysql-8.0.21-winx64\bin;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Go\bin;C:\Program Files\PuTTY;C:\Program Files\MySQL\MySQL Server 8.0\bin;E:\xampp\mysql\bin;C:\Users\MSI-PC\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\PostgreSQL\13\bin;C:\Program Files\PostgreSQL\13\lib;H:\VSCode;C:\Users\MSI-PC\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Git\cmd;C:\Program Files\Memurai;G:\watchman-v2020.08.17.00-windows\bin;C:\MinGW\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\MSI-PC\AppData\Local\Programs\Python\Python39;C:\Users\MSI-PC\AppData\Local\Programs\Python\Python39\Scripts;C:\Program Files (x86)\Yarn\bin;C:\Users\MSI-PC\.cargo\bin;C:\Users\MSI-PC\.windows-build-tools\python27;C:\Program Files\Imaginando\DRC;C:\Program Files\JetBrains\PyCharm Community Edition 2020.1.2\bin;H:\JetBrains\WebStorm 2020.1.2\bin;C:\Users\MSI-PC\AppData\Local\GitHubDesktop\bin;C:\Program Files\heroku\bin;H:\node_crash\heroku\bin;C:\Users\Administrator\Ubuntu;C:\Users\MSI-PC\go\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2\bin;C:\Users\MSI-PC\AppData\Local\hyper\app-3.0.2\resources\bin;C:\Users\MSI-PC\.deno\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\bin;C:\Users\MSI-PC\AppData\Local\Yarn\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2ftype-orm: Not found
+  Error: https://registry.yarnpkg.com/@types%2fbcriptjs: Not found
       at Request.params.callback [as _callback] (C:\Users\MSI-PC\AppData\Roaming\nvm\v12.18.3\node_modules\yarn\lib\cli.js:66988:18)
       at Request.self.callback (C:\Users\MSI-PC\AppData\Roaming\nvm\v12.18.3\node_modules\yarn\lib\cli.js:140662:22)
       at Request.emit (events.js:315:20)
@@ -34,6 +34,10 @@ npm manifest:
     "repository": "https://github.com/yakai911/rn-twitter-backend.git",
     "author": "Bruce Bryant <793041663@qq.com>",
     "license": "MIT",
+    "scripts": {
+      "start": "ts-node src/index.ts",
+      "dev": "nodemon src/index.ts "
+    },
     "dependencies": {
       "apollo-server-express": "^2.19.0",
       "bcryptjs": "^2.4.3",
