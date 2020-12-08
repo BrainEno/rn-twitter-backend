@@ -1,19 +1,33 @@
 import dotenv from "dotenv";
-import { MikroORM } from "@mikro-orm/core";
-import mikroConfig from "./mikro-orm.config";
-import { Post } from "./entites/Post";
+import "reflect-metadata";
+import express from "express";
+import { ApolloServer } from "apollo-server-express";
+import { buildSchema } from "type-graphql";
+import { createConnection } from "typeorm";
+import { HelloResolver } from "./modules/user/HelloResolvers";
+import cors from "cors";
 
-const main = async () => {
+(async () => {
   dotenv.config();
-  //初始化数据库
-  const orm = await MikroORM.init(mikroConfig);
-  await orm.getMigrator().up();
-  const post = orm.em.create(Post, {
-    title: "my mikorm post!",
-  });
-  await orm.em.persistAndFlush(post);
-};
+  const app = express();
 
-main().catch((err) => {
-  console.error(err);
-});
+  app.use(cors({ origin: `${process.env.CLIENT_URL}` }));
+
+  app.get("/", (_req, res) => res.send("Hello world!"));
+
+  await createConnection();
+
+  const schema = await buildSchema({
+    resolvers: [HelloResolver],
+  });
+
+  const apolloServer = new ApolloServer({
+    schema,
+  });
+
+  apolloServer.applyMiddleware({ app });
+
+  app.listen(5000, () => {
+    console.log("express server started on http://localhost:5000/graphql");
+  });
+})();
