@@ -12,8 +12,8 @@ import { User } from "./User";
 @Entity()
 export class Message extends BaseEntity {
   @Field(() => ID)
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn("uuid")
+  id: string;
 
   @Field()
   @Column("timestamp")
